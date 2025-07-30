@@ -1,0 +1,145 @@
+.hero-image-3d {
+  margin-top: 1.5rem;
+  width: 320px;
+  max-width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(249, 168, 38, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.hero-image-3d:hover {
+  transform: scale(1.05);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  background: conic-gradient(from 180deg, #ffaf7b, #d76d77, #3a1c71, #ffaf7b);
+  background-size: 300% 300%;
+  animation: fancyGradient 18s ease-in-out infinite;
+  color: #ffffff;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+/* Social Icons in Hero */
+.hero-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.social-icon {
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-icon.linkedin {
+  color: #0077b5;
+  background: rgba(0, 119, 181, 0.1);
+}
+
+.social-icon.github {
+  color: #faf5f5;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 12px rgba(249, 168, 38, 0.6);
+}
+
+.hero-glass {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem 3rem 5rem 3rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.hero-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%);
+  transform: skewX(-20deg);
+  animation: shine 6s infinite;
+  z-index: 2;
+}
+
+.resume-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1.5rem;
+  background-color: #efeded;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  z-index: 3;
+ 
+}
+
+.resume-btn:hover {
+  background-color: #ffd670;
+  box-shadow: 0 0 10px #ffd670, 0 0 20px #ffd670;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero .typing {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #fefefe;
+  font-weight: 500;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes fancyGradient {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background: transparent;
+  pointer-events: none;
+}

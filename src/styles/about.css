@@ -1,0 +1,205 @@
+.hero-image-3d {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%; /* Fully circular */
+  border: 4px solid rgba(249, 168, 38, 0.6);
+  box-shadow: 
+    0 0 15px rgba(249, 168, 38, 0.4),
+    0 0 30px rgba(249, 168, 38, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  animation: floatHero 4s ease-in-out infinite, glowPulseHero 3s ease-in-out infinite;
+  transition: all 0.4s ease;
+  margin-top: 1.5rem;
+}
+
+/* Floating animation */
+@keyframes floatHero {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Glow pulsing effect */
+@keyframes glowPulseHero {
+  0% {
+    box-shadow: 
+      0 0 15px rgba(249, 168, 38, 0.4),
+      0 0 30px rgba(249, 168, 38, 0.2),
+      inset 0 0 20px rgba(255, 255, 255, 0.05);
+  }
+  50% {
+    box-shadow: 
+      0 0 25px rgba(249, 168, 38, 0.8),
+      0 0 50px rgba(249, 168, 38, 0.4),
+      inset 0 0 25px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 0 15px rgba(249, 168, 38, 0.4),
+      0 0 30px rgba(249, 168, 38, 0.2),
+      inset 0 0 20px rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Hover effect */
+.hero-image-3d:hover {
+  transform: scale(1.05) rotate(2deg);
+  border-color: rgba(255, 205, 74, 0.9);
+}
+
+.about {
+  padding: 4rem 2rem;
+  position: relative;
+  background: linear-gradient(145deg, #0e0e1a, #1c1c2b);
+  color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particles-section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about::before,
+.about::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,165,0,0.3), transparent 70%);
+  z-index: 0;
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+.about::before {
+  width: 300px;
+  height: 300px;
+  top: -50px;
+  left: -50px;
+}
+
+.about::after {
+  width: 300px;
+  height: 300px;
+  bottom: -60px;
+  right: -60px;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #f9a826;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(249, 168, 38, 0.6);
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-img {
+  position: relative;
+  max-width: 320px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 40px rgba(249, 168, 38, 0.3), 0 0 20px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(255, 204, 0, 0.6), 0 0 30px rgba(0,0,0,0.5);
+}
+
+.about-main {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 2;
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.about-intro:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 1.2rem;
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(249, 168, 38, 0.2), 0 6px 25px rgba(0,0,0,0.3);
+}
+
+.about-card h3 {
+  font-size: 1.2rem;
+  color: #f2f0ee;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .about-main {
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-img {
+    width: 80%;
+    border-radius: 20px;
+  }
+}

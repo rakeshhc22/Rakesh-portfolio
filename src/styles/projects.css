@@ -1,0 +1,178 @@
+.projects {
+  padding: 4rem 2rem;
+  background: linear-gradient(145deg, #0f0f1f, #1a1a2e);
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  color: #f9a826;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Carousel container */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Carousel flex */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Base card style */
+.carousel-card {
+  position: relative;
+  width: 300px;
+  margin: 0 10px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  color: #fff;
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+}
+
+/* Center card - main focus */
+.carousel-card.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  box-shadow: 0 8px 30px rgba(249, 168, 38, 0.6);
+  border: 1px solid rgba(249, 168, 38, 0.3);
+}
+
+/* Left card - smaller + blurred */
+.carousel-card.left {
+  opacity: 0.4;
+  transform: scale(0.9) translateX(-50px);
+  filter: blur(2px);
+}
+
+/* Right card - smaller + blurred */
+.carousel-card.right {
+  opacity: 0.4;
+  transform: scale(0.9) translateX(50px);
+  filter: blur(2px);
+}
+
+/* Hide other cards */
+.carousel-card.hidden {
+  display: none;
+}
+
+/* Card content */
+.carousel-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.carousel-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #f9a826, #ffcd4a);
+  color: #000;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(249, 168, 38, 0.4);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ffcd4a, #f9a826);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(249, 168, 38, 0.6);
+}
+
+/* Navigation buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  font-size: 2rem;
+  z-index: 4;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(249, 168, 38, 0.8);
+  color: #000;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(249, 168, 38, 0.6);
+}
+
+.nav-btn.left {
+  left: 10px;
+}
+
+.nav-btn.right {
+  right: 10px;
+}
+
+/* Dots navigation */
+.dots {
+  margin-top: 1rem;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #666;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #f9a826;
+  transform: scale(1.2);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .carousel-card {
+    min-width: 90%;
+    max-width: 90%;
+  }
+  .carousel-card.left,
+  .carousel-card.right {
+    display: none;
+  }
+  .nav-btn {
+    font-size: 1.5rem;
+  }
+}
