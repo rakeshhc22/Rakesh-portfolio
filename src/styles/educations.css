@@ -1,0 +1,198 @@
+.education {
+  padding: 4rem 2rem;
+  background: linear-gradient(145deg, #0e0e1a, #1c1c2b);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* Animated gradient background */
+.education::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(249, 168, 38, 0.15) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 80%,
+    rgba(138, 43, 226, 0.1) 0%,
+    transparent 50%
+  );
+  animation: gradientShift 15s ease infinite;
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(10%, 10%) rotate(120deg);
+  }
+  66% {
+    transform: translate(-5%, 5%) rotate(240deg);
+  }
+}
+
+.education h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f9a826;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(249, 168, 38, 0.4);
+  z-index: 2;
+  position: relative;
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  padding-left: 2rem;
+  border-left: 3px solid #f9a826;
+  z-index: 2;
+}
+
+.education-box {
+  position: relative;
+  background: rgba(58, 53, 80, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  border-left: 6px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #e0e0e0;
+  text-align: left;
+}
+
+.education-box::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  left: -2.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #f9a826;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #f9a826aa, 0 0 20px rgba(249, 168, 38, 0.4);
+  transition: all 0.4s ease;
+  z-index: 3;
+}
+
+.education-box:hover {
+  transform: scale(1.02) translateX(8px);
+  background: linear-gradient(145deg, rgba(75, 69, 97, 0.9), rgba(47, 42, 63, 0.9));
+  border-left-color: #f9a826;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(249, 168, 38, 0.1);
+}
+
+.education-box:hover::before {
+  transform: scale(1.3);
+  box-shadow: 0 0 15px #f9a826, 0 0 30px rgba(249, 168, 38, 0.6);
+}
+
+.education-box h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.education-box p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.education-box p strong {
+  color: #f9a826;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education {
+    padding: 3rem 1.5rem;
+  }
+
+  .education h2 {
+    font-size: 2rem;
+  }
+
+  .education-container {
+    padding-left: 1.5rem;
+    border-left-width: 2px;
+  }
+
+  .education-box {
+    padding: 1.5rem;
+  }
+
+  .education-box::before {
+    left: -2.1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .education-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .education-box p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .education {
+    padding: 2rem 1rem;
+  }
+
+  .education h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .education-container {
+    padding-left: 0;
+    border-left: none;
+    gap: 1.5rem;
+  }
+
+  .education-box {
+    padding: 1.2rem;
+    border-left-width: 4px;
+  }
+
+  .education-box::before {
+    display: none;
+  }
+
+  .education-box:hover {
+    transform: scale(1.01) translateX(4px);
+  }
+
+  .education-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .education-box p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,33 @@
+.footer {
+  background: linear-gradient(145deg, #0d0d17, #1a1a2e);
+  padding: 2rem 1rem;
+  color: #fff;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Footer text */
+.footer p {
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-top: 1.2rem;
+  letter-spacing: 0.4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .icons {
+    gap: 0.6rem;
+  }
+  
+  .icon {
+    width: 34px;
+    height: 34px;
+  }
+}

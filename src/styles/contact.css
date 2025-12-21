@@ -1,0 +1,222 @@
+.contact {
+  padding: 4rem 2rem;
+  background: linear-gradient(145deg, #0f0f1f, #1a1a2e);
+  color: #fff;
+  text-align: center;
+}
+
+/* Title */
+.contact h2 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.contact .highlight {
+  color: #f9a826;
+  text-shadow: 0 0 10px rgba(249, 168, 38, 0.6);
+}
+
+/* Layout */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* ===== CONTACT INFO CARDS ===== */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  gap: 0.9rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.info-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(249, 168, 38, 0.4);
+  border-color: rgba(249, 168, 38, 0.4);
+}
+
+.info-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* Icons */
+.contact-icon {
+  font-size: 1.8rem;
+}
+
+.phone-icon {
+  color: #00c851;
+  filter: drop-shadow(0 0 6px rgba(0, 200, 81, 0.8));
+}
+
+.email-icon {
+  color: #007bff;
+  filter: drop-shadow(0 0 6px rgba(0, 123, 255, 0.8));
+}
+
+.location-icon {
+  color: #ff4444;
+  filter: drop-shadow(0 0 6px rgba(255, 68, 68, 0.8));
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.95rem;
+  resize: none;
+  outline: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #bbbbbb;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(249, 168, 38, 0.5);
+  box-shadow: 0 0 8px rgba(249, 168, 38, 0.4);
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, #f9a826, #ffcd4a);
+  border: none;
+  color: #000;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(249, 168, 38, 0.4);
+}
+
+.contact-form button:hover {
+  background: linear-gradient(135deg, #ffcd4a, #f9a826);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(249, 168, 38, 0.6);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets and below – 2 columns for main section */
+@media (max-width: 768px) {
+  .contact {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .contact h2 {
+    font-size: 2.2rem;
+  }
+
+  .contact-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns */
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    padding: 0.8rem 1rem;
+  }
+
+  .form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile – keep 2 columns but tighter */
+@media (max-width: 540px) {
+  .contact {
+    padding: 3rem 1.2rem;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .contact-info {
+    gap: 0.8rem;
+  }
+
+  .info-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .info-card p {
+    font-size: 0.6rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr; /* stack name & email on very small screens */
+    gap: 0.7rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .contact-form button {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+  .contact-container {
+    grid-template-columns: 1fr; /* fallback to single column if extremely narrow */
+  }
+}

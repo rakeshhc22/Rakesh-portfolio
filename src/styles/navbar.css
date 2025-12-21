@@ -1,0 +1,280 @@
+/* ===== NAVBAR - FULLY TRANSPARENT ===== */
+
+.navbar {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Logo */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f9a826;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 1001;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Nav Links Container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav Links */
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding-bottom: 3px;
+}
+
+/* Underline Animation */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #f9a826;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f9a826;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Active Link */
+.nav-links a.active {
+  color: #f9a826;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Sticky Navbar - Optional glassy effect when scrolled */
+.navbar.sticky {
+  background: rgba(10, 10, 20, 0.75);
+  backdrop-filter: blur(1%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(249, 168, 38, 0.1);
+}
+
+/* ===== HAMBURGER MENU ===== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger Active Animation */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet and Mobile (768px and below) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.7rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mobile Menu - Glassy Effect */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    background: rgba(88, 88, 95, 0.703);
+    backdrop-filter: blur(1%);
+    -webkit-backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    max-width: 300px;
+    height: 100vh;
+    padding-top: 5rem;
+    gap: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+    box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(249, 168, 38, 0.2);
+  }
+
+  /* Show Menu */
+  .nav-links.show {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    text-align: left;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(249, 168, 38, 0.15);
+    color: #ffd670;
+    padding-left: 2rem;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.9rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hamburger {
+    width: 28px;
+    height: 20px;
+  }
+
+  .bar {
+    height: 2.5px;
+  }
+
+  .nav-links {
+    width: 70%;
+    max-width: 250px;
+    padding-top: 4.5rem;
+  }
+
+  .nav-links a {
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .hamburger {
+    width: 26px;
+    height: 19px;
+  }
+
+  .nav-links {
+    width: 75%;
+  }
+
+  .nav-links a {
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Overlay when menu is open */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .menu-overlay {
+    display: block;
+  }
+}
