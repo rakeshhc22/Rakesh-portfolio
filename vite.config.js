@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Rakesh-portfolio/",   // <-- important
+  base: "/rakesh-portfolio-react/",   // <-- use new repo name
 });
