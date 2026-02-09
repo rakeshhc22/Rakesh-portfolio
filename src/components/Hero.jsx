@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../styles/hero.css";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
@@ -55,14 +57,14 @@ const Hero = () => {
         </p>
 
         <div className="hero-actions">
-          <a
-            href="/resume.pdf"
-            className="resume-btn"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Check Resume
-          </a>
+  <a
+    href="/Rakesh-portfolio/Rakesh _HC.pdf"
+    className="resume-btn"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Check Resume
+  </a>
           <a href="#projects" className="hero-secondary-btn">
             View Projects
           </a>
@@ -70,7 +72,7 @@ const Hero = () => {
 
         <div className="hero-socials">
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/in/rakesh-h-c-7553b5229/"
             target="_blank"
             rel="noreferrer"
             className="social-icon linkedin"
@@ -83,8 +85,19 @@ const Hero = () => {
             rel="noreferrer"
             className="social-icon github"
           >
+            
             <FaGithub />
           </a>
+            <a
+  href="https://leetcode.com/u/RakeshHC/"
+  target="_blank"
+  rel="noreferrer"
+  className="social-icon leetcode"
+>
+  <SiLeetcode />
+</a>
+
+          
         </div>
       </div>
     </section>
