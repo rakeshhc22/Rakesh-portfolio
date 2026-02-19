@@ -26,7 +26,7 @@ const Projects = () => {
       img: canteenImg,
       title: "Canteen Management System",
       desc: "A full-stack digital food ordering system for college canteens.",
-      tech: "React.js, Flask, PostgreSQL, JWT",
+      tech: "React.js, Flask, PostgreSQL",
       link: "https://github.com/rakeshhc22/Canteen-Management"
     },
     {

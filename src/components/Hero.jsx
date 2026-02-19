@@ -43,7 +43,7 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero-glass">
-        <h1>👋 Hi, I'm Rakesh H C</h1>
+        <h1 className="hero-name">👋 Hi, I'm Rakesh H C</h1>
         <p className="hero-tagline">Full‑Stack Developer & Data Enthusiast</p>
 
         
