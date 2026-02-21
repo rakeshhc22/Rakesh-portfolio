@@ -84,9 +84,9 @@
   perspective: 1000px;
 }
 
-/* BASE CARD - PERFECTLY RESPONSIVE */
+/* BASE CARD - RESPONSIVE */
 .carousel-card {
-  flex: 0 0 320px; /* FLEXIBLE WIDTH */
+  flex: 0 0 320px;
   height: 460px;
   padding: 1.5rem;
   background: rgba(20, 20, 40, 0.95);
@@ -106,7 +106,7 @@
 .carousel-card.active {
   opacity: 1;
   transform: scale(1) translateY(0) translateZ(40px);
-  flex: 0 0 360px; /* SLIGHTLY LARGER */
+  flex: 0 0 360px;
   height: 480px;
   z-index: 3;
   border-color: rgba(100, 221, 173, 0.4);
@@ -127,7 +127,7 @@
   filter: blur(0.5px);
 }
 
-/* CARD CONTENT */
+/* CARD CONTENT - BETTER SPACING */
 .carousel-card img {
   width: 100%;
   height: 180px;
@@ -153,10 +153,10 @@
   font-size: 0.92rem;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem; /* Increased for button space */
 }
 
-/* BUTTON */
+/* BUTTON - FLEXIBLE FOR MOBILE */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -170,6 +170,7 @@
   text-decoration: none;
   transition: all 0.4s ease;
   box-shadow: 0 8px 30px rgba(100, 221, 173, 0.4);
+  white-space: nowrap; /* Prevent wrap */
 }
 
 .btn:hover {
@@ -238,27 +239,96 @@
   box-shadow: 0 0 15px rgba(100, 221, 173, 0.6);
 }
 
-/* 🎯 PERFECT MOBILE - LIKE YOUR ORIGINAL */
+/* FIXED MOBILE RESPONSIVE - CARDS FULL WIDTH, TALLER HEIGHT */
 @media (max-width: 768px) {
-  .carousel-card {
-    min-width: 90%;
-    max-width: 90%;
+  .carousel {
+    height: 500px; /* Taller carousel */
   }
+  
+  .carousel-card {
+    flex: 0 0 90vw; /* Full viewport width */
+    max-width: 90vw;
+    min-height: 480px; /* Fixed min height */
+    height: auto; /* Auto height */
+    padding: 1.2rem;
+  }
+  
   .carousel-card.left,
   .carousel-card.right {
-    display: none;
+    display: none; /* Hide sides on mobile */
   }
+  
+  .carousel-card.active {
+    flex: 0 0 90vw;
+    height: auto;
+    min-height: 480px;
+    padding: 1.5rem;
+  }
+  
+  .carousel-card img {
+    height: 160px; /* Slightly smaller image */
+  }
+  
+  .carousel-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .carousel-card p {
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem; /* More space for button */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .btn {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.85rem;
+  }
+  
   .nav-btn {
-    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
   }
 }
+
 @media (max-width: 480px) {
-  .carousel { height: 380px; }
-  .carousel-card.active,
-  .carousel-card {
-    height: 360px;
+  .carousel {
+    height: 450px;
   }
-  .nav-btn { width: 42px; height: 42px; font-size: 1.1rem; }
+  
+  .carousel-card,
+  .carousel-card.active {
+    min-height: 430px;
+    padding: 1rem;
+  }
+  
+  .carousel-card img {
+    height: 140px;
+  }
+  
+  .carousel-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .carousel-card p {
+    font-size: 0.85rem;
+    margin-bottom: 1.4rem;
+  }
+  
+  .btn {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.82rem;
+  }
+  
+  .nav-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
 }
 
 /* TABLET */

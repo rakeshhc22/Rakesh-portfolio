@@ -1,4 +1,4 @@
-/* ===== NAVBAR - FULLY TRANSPARENT ===== */
+/* ===== NAVBAR - FULLY TRANSPARENT WITH TEAL ACCENT ===== */
 
 .navbar {
   background: transparent;
@@ -17,11 +17,11 @@
   transition: all 0.3s ease;
 }
 
-/* Logo */
+/* Logo - Teal accent matching screenshot */
 .logo {
   font-size: 2rem;
   font-weight: bold;
-  color: #f9a826;
+  color: #22cbcc; /* Teal color from screenshot */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 1px;
   cursor: pointer;
@@ -54,7 +54,7 @@
   padding-bottom: 3px;
 }
 
-/* Underline Animation */
+/* Underline Animation - Teal color */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -62,12 +62,12 @@
   height: 2px;
   left: 0;
   bottom: 0;
-  background-color: #f9a826;
+  background-color: #22cbcc; /* Changed to teal */
   transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #f9a826;
+  color: #22cbcc; /* Teal hover */
 }
 
 .nav-links a:hover::after {
@@ -76,19 +76,20 @@
 
 /* Active Link */
 .nav-links a.active {
-  color: #f9a826;
+  color: #22cbcc; /* Teal active */
 }
 
 .nav-links a.active::after {
   width: 100%;
 }
 
-/* Sticky Navbar - Optional glassy effect when scrolled */
+/* Sticky Navbar - Glassy frosted effect on scroll */
 .navbar.sticky {
-  background: rgba(10, 10, 20, 0.75);
-  backdrop-filter: blur(1%);
+  background: rgba(10, 10, 20, 0.8); /* Dark semi-transparent */
+  backdrop-filter: blur(20px); /* Frosted glass effect [web:4][web:6] */
+  -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(249, 168, 38, 0.1);
+  border-bottom: 1px solid rgba(34, 203, 204, 0.2); /* Teal border tint [web:7] */
 }
 
 /* ===== HAMBURGER MENU ===== */
@@ -139,18 +140,19 @@
 
   .logo {
     font-size: 1.7rem;
+    color: #22cbcc; /* Maintain teal */
   }
 
   .hamburger {
     display: flex;
   }
 
-  /* Mobile Menu - Glassy Effect */
+  /* Mobile Menu - Enhanced glassy effect */
   .nav-links {
     display: flex;
     flex-direction: column;
-    background: rgba(88, 88, 95, 0.703);
-    backdrop-filter: blur(1%);
+    background: rgba(34, 203, 204, 0.1); /* Teal-tinted glass [web:4] */
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     position: fixed;
     top: 0;
@@ -165,7 +167,7 @@
     pointer-events: none;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
     box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5);
-    border-right: 1px solid rgba(249, 168, 38, 0.2);
+    border-right: 1px solid rgba(34, 203, 204, 0.3); /* Teal border */
   }
 
   /* Show Menu */
@@ -195,8 +197,8 @@
 
   .nav-links a:hover,
   .nav-links a.active {
-    background: rgba(249, 168, 38, 0.15);
-    color: #ffd670;
+    background: rgba(34, 203, 204, 0.2); /* Teal hover bg */
+    color: #22cbcc;
     padding-left: 2rem;
   }
 }
@@ -253,7 +255,7 @@
   }
 }
 
-/* Overlay when menu is open */
+/* Overlay when menu is open - Enhanced blur */
 .menu-overlay {
   display: none;
   position: fixed;
@@ -261,8 +263,8 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
   z-index: 999;
   opacity: 0;
   transition: opacity 0.3s ease;
