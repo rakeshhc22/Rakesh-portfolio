@@ -72,6 +72,7 @@
   to { width: 200px; box-shadow: 0 0 35px #00d4ff; }
 }
 
+/* DESKTOP: 2-column layout with form */
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -81,6 +82,20 @@
   align-items: start;
   position: relative;
   z-index: 2;
+}
+
+/* MOBILE: Single column with ONLY info cards */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+  
+  /* HIDE FORM COMPLETELY ON MOBILE */
+  .contact-form {
+    display: none !important;
+  }
 }
 
 /* 🌟 PREMIUM INFO CARDS */
@@ -167,7 +182,7 @@
   font-weight: 400;
 }
 
-/* 🔥 PREMIUM FORM */
+/* 🔥 FORM - ONLY VISIBLE ON DESKTOP */
 .contact-form {
   background: rgba(20, 20, 45, 0.95);
   backdrop-filter: blur(30px);
@@ -266,43 +281,11 @@
   box-shadow: 0 25px 70px rgba(100, 221, 173, 0.6);
 }
 
-/* 🎯 RESPONSIVE - 2 COLUMNS EVEN ON MOBILE */
+/* RESPONSIVE - ONLY INFO CARDS ON MOBILE */
 @media (max-width: 1024px) {
   .contact-container { 
     gap: 2rem; 
-    grid-template-columns: 1fr 1.1fr; /* Tighter on tablet */
-  }
-}
-
-@media (max-width: 768px) {
-  .contact { 
-    padding: 4rem 1rem 3rem; 
-  }
-  
-  .contact-container {
-    grid-template-columns: 1fr 1.2fr; /* KEEP 2 COLUMNS ON MOBILE */
-    gap: 1.8rem;
-    max-width: 95vw;
-  }
-  
-  .info-card {
-    padding: 1.5rem 1.5rem 1.5rem 1.2rem;
-    gap: 1rem;
-  }
-  
-  .contact-icon { 
-    width: 52px; 
-    height: 52px; 
-    font-size: 1.9rem; 
-  }
-  
-  .contact-form { 
-    padding: 1.8rem; 
-  }
-  
-  .form-row {
-    grid-template-columns: 1fr; /* Stack form fields vertically */
-    gap: 1rem;
+    grid-template-columns: 1fr 1.1fr;
   }
 }
 
@@ -312,8 +295,13 @@
   }
   
   .contact-container { 
-    grid-template-columns: 1fr 1.15fr; /* Still 2 columns, tighter */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  /* REINFORCE FORM HIDE ON SMALLER MOBILE */
+  .contact-form {
+    display: none !important;
   }
   
   .info-card {
@@ -329,21 +317,6 @@
   
   .info-card h4 { font-size: 1.05rem; }
   .info-card p { font-size: 0.92rem; }
-  
-  .contact-form { 
-    padding: 1.6rem; 
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 1rem 1.1rem;
-    font-size: 0.95rem;
-  }
-  
-  .contact-form button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 360px) {
@@ -352,11 +325,6 @@
   }
   
   .contact-container { 
-    grid-template-columns: 1fr 1.1fr; /* Maintain 2 columns */
     gap: 1.2rem;
-  }
-  
-  .contact-form { 
-    padding: 1.4rem; 
   }
 }
