@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "../styles/contact.css";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const formRef = useRef();
+  const [status, setStatus] = useState(""); // "sending" | "success" | "error"
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message Sent! (Form handling not yet implemented)");
+    setStatus("sending");
+
+    emailjs
+      .sendForm(
+        "service_qfpnwhq",   // 🔁 Replace this
+        "template_1znsr0t",  // 🔁 Replace this
+        formRef.current,
+        "Og1oJOUhZi426tJjZ"    // 🔁 Replace this
+      )
+      .then(() => {
+        setStatus("success");
+        formRef.current.reset();
+      })
+      .catch(() => {
+        setStatus("error");
+      });
   };
 
   return (
@@ -49,7 +68,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Form */}
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
           <div className="form-row">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
@@ -61,7 +80,17 @@ const Contact = () => {
             placeholder="Your Message"
             required
           ></textarea>
-          <button type="submit">Send Message</button>
+
+          <button type="submit" disabled={status === "sending"}>
+            {status === "sending" ? "Sending..." : "Send Message"}
+          </button>
+
+          {status === "success" && (
+            <p className="form-success">✅ Message sent! I'll get back to you soon.</p>
+          )}
+          {status === "error" && (
+            <p className="form-error">❌ Something went wrong. Please try again.</p>
+          )}
         </form>
       </div>
     </section>
