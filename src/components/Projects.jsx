@@ -11,6 +11,8 @@ import eegImg from '../assets/projects/EEG.png';
 import algoTradingImg from '../assets/projects/algo.png';
 import aiChatImg from '../assets/projects/aiChat.png';
 import opsImg from '../assets/projects/Nexaserv.png'; // 🔁 Add your image as Ops.png in assets/projects/
+import financeBackendImg from '../assets/projects/Finance.png';
+import scheduleFlowImg from '../assets/projects/Schedule.png';
 
 const projectsData = [
   {
@@ -82,6 +84,20 @@ const projectsData = [
     desc: "Full-stack SaaS platform centralizing booking, staff assignment, inventory tracking & customer communication.",
     tech: "Next.js, Node.js, PostgreSQL",
     link: "https://nexaserv-frontend.vercel.app/"
+  },
+  {
+    img: financeBackendImg,
+    title: "Finance Data Processing",
+    desc: "A secure backend system for processing financial data with role-based access control, JWT and REST APIs.",
+    tech: "Node.js, Express.js, MongoDB, JWT, RBAC",
+    link: "https://github.com/rakeshhc22/Finance-Data-Processing-and-Access-Control-Backend"
+  },
+  {
+    img: scheduleFlowImg,
+    title: "ScheduleFlow",
+    desc: "A modern full-stack scheduling application to manage tasks, events, and reminders with an intuitive calendar interface.",
+    tech: "React.js, Node.js, Express.js, MongoDB",
+    link: "https://github.com/rakeshhc22/ScheduleFlow"
   }
 ];
 
